@@ -23,8 +23,6 @@ namespace App.Loner.Importers
 					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 				}
 
-				Context.Log.d("wtf");
-
 				else
 				{
 					
