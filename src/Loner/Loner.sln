@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner", "App.Loner\App.Loner.csproj", "{70F8195C-9DF1-4576-BBD6-C8E4E57373EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Utils", "App.Loner.Utils\App.Loner.Utils.csproj", "{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{70F8195C-9DF1-4576-BBD6-C8E4E57373EE}.Debug|x86.Build.0 = Debug|x86
 		{70F8195C-9DF1-4576-BBD6-C8E4E57373EE}.Release|x86.ActiveCfg = Release|x86
 		{70F8195C-9DF1-4576-BBD6-C8E4E57373EE}.Release|x86.Build.0 = Release|x86
+		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
