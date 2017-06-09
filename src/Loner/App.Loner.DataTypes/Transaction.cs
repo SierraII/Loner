@@ -8,10 +8,12 @@ namespace App.Loner.DataTypes
 
 		public long MSISDN { get; set; }
 		public string Name { get; set; }
-		public string Data { get; set; }
 		public string Product { get; set; }
 		public decimal Amount { get; set; }
 		public DateTime DateTime { get; set; }
+
+		// always best to store the raw untouched data especially if we were writing to a db
+		public string Data { get; set; } 
 
 		public Transaction(long msisdn, string name, string date, string product, decimal amount, string data)
 		{
