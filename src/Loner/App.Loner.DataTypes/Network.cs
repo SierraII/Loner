@@ -63,17 +63,4 @@ namespace App.Loner.DataTypes
 
 
 	}
-
-	public class Loan
-	{
-		public DateTime DateTime { get; set; }
-		public List<Product> products { get; set; }
-	}
-
-	public class Product
-	{
-		public decimal Amount { get; set; }
-		public string Name { get; set; }
-	}
-
 }

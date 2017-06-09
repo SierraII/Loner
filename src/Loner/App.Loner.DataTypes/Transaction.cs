@@ -5,7 +5,7 @@ namespace App.Loner.DataTypes
 {
 	public class Transaction
 	{
-		
+
 		public long MSISDN { get; set; }
 		public string Name { get; set; }
 		public DateTime DateTime { get; set; }
@@ -30,3 +30,4 @@ namespace App.Loner.DataTypes
 
 	}
 }
+

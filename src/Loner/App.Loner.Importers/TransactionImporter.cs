@@ -1,5 +1,5 @@
-﻿using App.Loner.DataTypes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using App.Loner.DataTypes;
 using App.Loner.Serializers;
 
 namespace App.Loner.Importers
@@ -7,7 +7,7 @@ namespace App.Loner.Importers
 	public class TransactionImporter
 	{
 
-		public List<Network> AggrigateTransactionsFromCSV(string fileLocation)
+		public List<Network> aggrigateTransactionsFromCSV(string fileLocation)
 		{
 			List<Transaction> rawTransactions = new CSVSerializer().readFromCSV(fileLocation);
 

@@ -33,6 +33,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Network.cs" />
+    <Compile Include="Loan.cs" />
+    <Compile Include="Product.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.Loner.Utils\App.Loner.Utils.csproj">
