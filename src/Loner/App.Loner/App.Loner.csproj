@@ -45,6 +45,14 @@
       <Project>{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}</Project>
       <Name>App.Loner.Importers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.Loner.DataTypes\App.Loner.DataTypes.csproj">
+      <Project>{DE4B9B35-742F-44DB-ADEA-013A7494E768}</Project>
+      <Name>App.Loner.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Loner.Serializers\App.Loner.Serializers.csproj">
+      <Project>{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}</Project>
+      <Name>App.Loner.Serializers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

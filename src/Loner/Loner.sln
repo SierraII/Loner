@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Importers", "App.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.DataTypes", "App.Loner.DataTypes\App.Loner.DataTypes.csproj", "{DE4B9B35-742F-44DB-ADEA-013A7494E768}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Serializers", "App.Loner.Serializers\App.Loner.Serializers.csproj", "{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,5 +33,9 @@ Global
 		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Debug|x86.Build.0 = Debug|Any CPU
 		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Release|x86.ActiveCfg = Release|Any CPU
 		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Release|x86.Build.0 = Release|Any CPU
+		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Debug|x86.Build.0 = Debug|Any CPU
+		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Release|x86.ActiveCfg = Release|Any CPU
+		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
