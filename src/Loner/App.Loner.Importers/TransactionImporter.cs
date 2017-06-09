@@ -25,13 +25,12 @@ namespace App.Loner.Importers
 
 				if (response != null)
 				{
-					Console.WriteLine("network found... " + response.Name);
 					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 				}
 
 				else
 				{
-					Console.WriteLine("network not found... adding " + transaction.Name);
+					Console.WriteLine("adding " + transaction.Name + "...");
 
 					Network network = new Network(transaction.MSISDN, transaction.Name);
 					network.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);

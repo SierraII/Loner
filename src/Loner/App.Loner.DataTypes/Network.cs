@@ -25,16 +25,17 @@ namespace App.Loner.DataTypes
 
 			if (loanExists != null)
 			{
+
 				var productExists = loanExists.products.Find(e => e.Name == productName);
 
 				if (productExists != null)
 				{
-					Console.WriteLine("the product exists already...");
+					Console.WriteLine(this.Name + ":: " + productName + " exists in month " + date.ToString("MMMM") + ", incrementing product loan amount by " + amount);
 					productExists.Amount += amount;
 				}
 				else
 				{
-					Console.WriteLine("the product doesn't exist...");
+					Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
 
 					Product product = new Product();
 					product.Name = productName;
@@ -44,6 +45,7 @@ namespace App.Loner.DataTypes
 			}
 			else
 			{
+				Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
 				Loan loan = new Loan();
 				loan.DateTime = date;
 
