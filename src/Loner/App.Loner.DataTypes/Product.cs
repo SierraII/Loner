@@ -1,5 +1,4 @@
-﻿
-namespace App.Loner.DataTypes
+﻿namespace App.Loner.DataTypes
 {
 	public class Product
 	{

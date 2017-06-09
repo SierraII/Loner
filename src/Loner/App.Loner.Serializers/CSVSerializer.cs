@@ -41,9 +41,8 @@ namespace App.Loner.Serializers
 		{
 
 			List<Transaction> transactions = new List<Transaction>();
-
-			string line;
 			int count = 0;
+			string line;
 
 			try
 			{

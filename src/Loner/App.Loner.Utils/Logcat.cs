@@ -4,7 +4,7 @@ using System.Text;
 namespace App.Loner.Utils
 {
 
-	public class Logcat
+	public abstract class Logcat
 	{
 
 		public StringBuilder Info { get; set; }
