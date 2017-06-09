@@ -26,7 +26,14 @@ namespace App.Loner.Serializers
 					{
 						foreach (var product in loan.products)
 						{
-							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("MMM-yyyy") + "," + product.Count + "," + product.Amount);
+
+							file.WriteLine(network.Name +
+										   "," + product.Name +
+										   "," + loan.DateTime.ToString("MMM-yyyy") +
+										   "," + product.Count +
+										   "," + product.Amount.ToString().Replace(",", ".")
+										  );
+
 						}
 					}
 				}
