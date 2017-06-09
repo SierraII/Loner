@@ -19,44 +19,42 @@ namespace App.Loner.DataTypes
 
 		public void addLoan(DateTime date, string productName, decimal amount)
 		{
-			// check if the month and year already exists
-			var loanExists = this.loans.Find(e => e.DateTime.Month == date.Month && e.DateTime.Year == date.Year);
+			// check if the month and year already exists in that object
+			var existingLoan = this.loans.Find(e => e.DateTime.Month == date.Month && e.DateTime.Year == date.Year);
 
-			if (loanExists != null)
+			if (existingLoan != null)
 			{
 
-				var productExists = loanExists.products.Find(e => e.Name == productName);
+				var existingProduct = existingLoan.products.Find(e => e.Name == productName);
 
-				if (productExists != null)
+				if (existingProduct != null)
 				{
 					Console.WriteLine(this.Name + ":: " + productName + " exists in month " + date.ToString("MMMM") + ", incrementing product loan amount by " + amount);
-					productExists.Amount += amount;
+					existingProduct.Amount += amount;
 				}
 				else
 				{
+					
 					Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
 
-					Product product = new Product();
-					product.Name = productName;
-					product.Amount = amount;
-					loanExists.products.Add(product);
+					Product product = new Product(productName, amount);
+
+					existingLoan.products.Add(product);
+
 				}
 			}
 			else
 			{
+				
 				Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
 
-				Loan loan = new Loan();
-				loan.DateTime = date;
+				Product product = new Product(productName, amount);
 
-				Product product = new Product();
-				product.Name = productName;
-				product.Amount = amount;
-
-				loan.products = new List<Product>();
+				Loan loan = new Loan(date);
 				loan.products.Add(product);
 
 				this.loans.Add(loan);
+
 			}
 
 		}
