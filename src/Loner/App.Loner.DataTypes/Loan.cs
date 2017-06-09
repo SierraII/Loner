@@ -5,7 +5,6 @@ namespace App.Loner.DataTypes
 {
 	public class Loan
 	{
-		
 		public List<Product> products { get; set; }
 		public DateTime DateTime { get; set; }
 

@@ -51,6 +51,7 @@ namespace App.Loner.DataTypes
 					// ammend the amount
 					Core.Context.log.i(this.Name + " - " + productName + " exists in month " + date.ToString("MMMM") + ", incrementing amount by " + amount + ".");
 					existingProduct.Amount += amount;
+					existingProduct.Count += 1;
 				}
 
 			}

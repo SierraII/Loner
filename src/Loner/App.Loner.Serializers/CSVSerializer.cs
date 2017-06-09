@@ -18,7 +18,7 @@ namespace App.Loner.Serializers
 			using (StreamWriter file = new StreamWriter(@filename))
 			{
 
-				file.WriteLine("Network,Product,Month,Amount");
+				file.WriteLine("Network,Product,Month,Count,Amount");
 
 				foreach (var network in networks)
 				{
@@ -26,7 +26,7 @@ namespace App.Loner.Serializers
 					{
 						foreach (var product in loan.products)
 						{
-							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("MMM-yyyy") + "," + product.Amount);
+							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("MMM-yyyy") + "," + product.Count + "," + product.Amount);
 						}
 					}
 				}
