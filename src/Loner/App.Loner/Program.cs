@@ -2,6 +2,7 @@
 using App.Loner.Serializers;
 using System.Collections.Generic;
 using App.Loner.DataTypes;
+using System;
 
 namespace App.Loner
 {
@@ -13,7 +14,10 @@ namespace App.Loner
 			CSVSerializer csvSerializer = new CSVSerializer();
 
 			List<Network> aggregatedNetworkList = transactionImporter.aggrigateTransactionsFromCSV("../../../../loans.csv");
-			csvSerializer.exportAggrigatedList(aggregatedNetworkList, "output.csv");
+
+			csvSerializer.exportAggrigatedList(aggregatedNetworkList, "../../../../output.csv");
+
+			Console.ReadLine();
 		}
 	}
 }

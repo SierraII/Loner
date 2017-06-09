@@ -18,20 +18,17 @@ namespace App.Loner.Importers
 				
 				var response = aggrigatedTransactions.Find(e => e.Name == transaction.Name);
 
-				if (response != null)
+				if (response == null)
 				{
-					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
-				}
-
-				else
-				{
-					
 					Network network = new Network(transaction.MSISDN, transaction.Name);
 					network.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 
 					aggrigatedTransactions.Add(network);
+				}
 
-
+				else
+				{
+					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 				}
 
 			}

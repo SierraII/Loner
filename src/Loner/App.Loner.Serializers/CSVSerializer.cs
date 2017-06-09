@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using App.Loner.DataTypes;
 
 namespace App.Loner.Serializers
@@ -11,62 +12,78 @@ namespace App.Loner.Serializers
 
 		public void exportAggrigatedList(List<Network> networks, string filename)
 		{
-			var text = "Network,Product,Month,Amount\n";
 
-			foreach (var network in networks)
+			Console.WriteLine("creating aggregated output file...");
+
+			using (StreamWriter file = new StreamWriter(@filename))
 			{
-
-				foreach (var loan in network.loans)
-				{
-
-					foreach (var product in loan.products)
-					{
-						text += network.Name + "," + product.Name + "," + loan.DateTime.ToString("dd-MMM-yyyy") + "," + product.Amount + "\n";
-					}
 				
+				file.WriteLine("Network,Product,Month,Amount");
+
+				foreach (var network in networks)
+				{
+					foreach (var loan in network.loans)
+					{
+						foreach (var product in loan.products)
+						{
+							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("dd-MMM-yyyy") + "," + product.Amount);
+						}
+					}
 				}
 
-			}
+				Console.WriteLine("file successfully written.");
 
-			Console.WriteLine(text);
+			}
 
 		}
 
 		public List<Transaction> readFromCSV(string fileLocation)
 		{
+
 			List<Transaction> transactions = new List<Transaction>();
 
 			string line;
 			int count = 0;
 
-			using (var file = new StreamReader(fileLocation))
+			try
 			{
-				while ((line = file.ReadLine()) != null)
+
+				using (var file = new StreamReader(@fileLocation))
 				{
-					// skip first line
-					if(count > 0)
+
+					while ((line = file.ReadLine()) != null)
 					{
-						
-						string[] words = line.Split(',');
-						try
+						// skip first line
+						if (count > 0)
 						{
-							Transaction transaction = new Transaction(long.Parse(words[0]), words[1], words[2], words[3], decimal.Parse(words[4], CultureInfo.InvariantCulture), line);
-							transactions.Add(transaction);
+
+							string[] words = line.Split(',');
+							try
+							{
+								Transaction transaction = new Transaction(long.Parse(words[0]), words[1], words[2], words[3], decimal.Parse(words[4], CultureInfo.InvariantCulture), line);
+								transactions.Add(transaction);
+							}
+							catch (Exception ex)
+							{
+								Console.WriteLine("error parsing values to network model: " + ex.Message);
+							}
+
 						}
-						catch(Exception ex)
-						{
-							Console.WriteLine("error parsing network values " + ex.StackTrace + " " + ex.Message);
-						}
+
+						count++;
 
 					}
-
-					count++;
 
 				}
 
 			}
+			catch (FileNotFoundException ex)
+			{
+				Console.WriteLine("file not found");
+			}
 
 			return transactions;
+
 		}
 	}
 }
