@@ -34,10 +34,11 @@ namespace App.Loner.Serializers
 						try
 						{
 							Transaction transaction = new Transaction(long.Parse(words[0]), words[1], words[2], words[3], decimal.Parse(words[4], CultureInfo.InvariantCulture), line);
+							transactions.Add(transaction);
 						}
 						catch(Exception ex)
 						{
-							throw new ApplicationException("error parsing network values" + ex.StackTrace + " " + ex.Message);
+							throw new ApplicationException("error parsing network values " + ex.StackTrace + " " + ex.Message);
 						}
 
 					}

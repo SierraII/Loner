@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace App.Loner.DataTypes
 {
@@ -15,11 +16,16 @@ namespace App.Loner.DataTypes
 		public Transaction(long msisdn, string name, string date, string product, decimal amount, string data)
 		{
 			this.MSISDN = msisdn;
-			this.Name = name;
-			this.DateTime = new DateTime();
-			this.Product = product;
+			this.Name = clean(name);
+			this.DateTime = DateTime.ParseExact(clean(date), "dd-MMM-yyyy", CultureInfo.InvariantCulture);
+			this.Product = clean(product);
 			this.Amount = amount;
 			this.Data = data;
+		}
+
+		public string clean(string input)
+		{
+			return input.Trim().Replace("'", "");
 		}
 
 	}

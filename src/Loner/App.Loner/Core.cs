@@ -18,7 +18,7 @@ namespace App.Loner
 			Log = new Logcat();
 			NetworkImporter = new TransactionImporter();
 
-			List<Transaction> transactions = NetworkImporter.AggrigateNetworkFromCSV("../../../../loans.csv");
+			List<Transaction> transactions = NetworkImporter.AggrigateTransactionsFromCSV("../../../../loans.csv");
 		}
 
 	}
