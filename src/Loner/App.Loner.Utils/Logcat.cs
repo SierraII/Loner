@@ -34,6 +34,7 @@ namespace App.Loner.Utils
 		{
 			Error.AppendLine(message);
 			Console.WriteLine(message);
+
 		}
 
 	}

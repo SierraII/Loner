@@ -34,5 +34,11 @@
     <Compile Include="Transaction.cs" />
     <Compile Include="Network.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Loner.Utils\App.Loner.Utils.csproj">
+      <Project>{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}</Project>
+      <Name>App.Loner.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

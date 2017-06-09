@@ -1,21 +1,16 @@
 ﻿using App.Loner.DataTypes;
 using System.Collections.Generic;
 using App.Loner.Serializers;
-using System;
 
 namespace App.Loner.Importers
 {
 	public class TransactionImporter
 	{
 
-		public TransactionImporter()
-		{
-			
-		}
-
 		public List<Network> AggrigateTransactionsFromCSV(string fileLocation)
 		{
-			List<Transaction> rawTransactions = new CSVSerializer(fileLocation).readFromCSV();
+			List<Transaction> rawTransactions = new CSVSerializer().readFromCSV(fileLocation);
+
 			List<Network> aggrigatedTransactions = new List<Network>();
 
 			foreach(var transaction in rawTransactions)
@@ -28,14 +23,17 @@ namespace App.Loner.Importers
 					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 				}
 
+				Context.Log.d("wtf");
+
 				else
 				{
-					Console.WriteLine("adding " + transaction.Name + "...");
-
+					
 					Network network = new Network(transaction.MSISDN, transaction.Name);
 					network.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
 
 					aggrigatedTransactions.Add(network);
+
+
 				}
 
 			}

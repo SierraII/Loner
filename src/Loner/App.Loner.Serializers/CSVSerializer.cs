@@ -8,21 +8,38 @@ namespace App.Loner.Serializers
 {
 	public class CSVSerializer
 	{
-		public string FileLocation { get; set; }
 
-		public CSVSerializer(string fileLocation)
+		public void exportAggrigatedList(List<Network> networks, string filename)
 		{
-			this.FileLocation = fileLocation;
+			var text = "Network,Product,Month,Amount\n";
+
+			foreach (var network in networks)
+			{
+
+				foreach (var loan in network.loans)
+				{
+
+					foreach (var product in loan.products)
+					{
+						text += network.Name + "," + product.Name + "," + loan.DateTime.ToString("dd-MMM-yyyy") + "," + product.Amount + "\n";
+					}
+				
+				}
+
+			}
+
+			Console.WriteLine(text);
+
 		}
 
-		public List<Transaction> readFromCSV()
+		public List<Transaction> readFromCSV(string fileLocation)
 		{
 			List<Transaction> transactions = new List<Transaction>();
 
 			string line;
 			int count = 0;
 
-			using (var file = new StreamReader(this.FileLocation))
+			using (var file = new StreamReader(fileLocation))
 			{
 				while ((line = file.ReadLine()) != null)
 				{
@@ -38,7 +55,7 @@ namespace App.Loner.Serializers
 						}
 						catch(Exception ex)
 						{
-							throw new ApplicationException("error parsing network values " + ex.StackTrace + " " + ex.Message);
+							Console.WriteLine("error parsing network values " + ex.StackTrace + " " + ex.Message);
 						}
 
 					}

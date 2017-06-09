@@ -19,9 +19,8 @@ namespace App.Loner.DataTypes
 
 		public void addLoan(DateTime date, string productName, decimal amount)
 		{
-			
-			// check if the month already exists
-			var loanExists = this.loans.Find(e => e.DateTime.Month == date.Month);
+			// check if the month and year already exists
+			var loanExists = this.loans.Find(e => e.DateTime.Month == date.Month && e.DateTime.Year == date.Year);
 
 			if (loanExists != null)
 			{
@@ -46,6 +45,7 @@ namespace App.Loner.DataTypes
 			else
 			{
 				Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
+
 				Loan loan = new Loan();
 				loan.DateTime = date;
 
