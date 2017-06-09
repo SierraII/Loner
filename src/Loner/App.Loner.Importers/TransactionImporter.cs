@@ -13,16 +13,33 @@ namespace App.Loner.Importers
 			
 		}
 
-		public List<Transaction> AggrigateTransactionsFromCSV(string fileLocation)
+		public List<Network> AggrigateTransactionsFromCSV(string fileLocation)
 		{
 			List<Transaction> rawTransactions = new CSVSerializer(fileLocation).readFromCSV();
+			List<Network> aggrigatedTransactions = new List<Network>();
 
 			foreach(var transaction in rawTransactions)
 			{
-				Console.WriteLine(transaction.MSISDN);
-			}
+				
+				var response = aggrigatedTransactions.Find(e => e.Name == transaction.Name);
 
-			List<Transaction> aggrigatedTransactions = new List<Transaction>();
+				if (response != null)
+				{
+					Console.WriteLine("network found... " + response.Name);
+					response.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
+				}
+
+				else
+				{
+					Console.WriteLine("network not found... adding " + transaction.Name);
+
+					Network network = new Network(transaction.MSISDN, transaction.Name);
+					network.addLoan(transaction.DateTime, transaction.Product, transaction.Amount);
+
+					aggrigatedTransactions.Add(network);
+				}
+
+			}
 
 			return aggrigatedTransactions;
 
