@@ -13,11 +13,11 @@ namespace App.Loner.Serializers
 		public void exportAggrigatedList(List<Network> networks, string filename)
 		{
 
-			Console.WriteLine("creating aggregated output file...");
+			Core.Context.log.i("creating aggregated output file...");
 
 			using (StreamWriter file = new StreamWriter(@filename))
 			{
-				
+
 				file.WriteLine("Network,Product,Month,Amount");
 
 				foreach (var network in networks)
@@ -26,19 +26,30 @@ namespace App.Loner.Serializers
 					{
 						foreach (var product in loan.products)
 						{
-							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("dd-MMM-yyyy") + "," + product.Amount);
+							file.WriteLine(network.Name + "," + product.Name + "," + loan.DateTime.ToString("MMM-yyyy") + "," + product.Amount);
 						}
 					}
 				}
 
-				Console.WriteLine("file successfully written.");
+				Core.Context.log.i("file successfully written.");
 
 			}
 
 		}
 
+		public void writeFailedDataToCSV(string line)
+		{
+			using (StreamWriter file = new StreamWriter("../../../../failed_transactions.csv", true))
+			{
+				file.WriteLine(DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss ffff") + "," + line);
+			}
+
+			Core.Context.log.i("appending failed transaction to file...");
+		}
+
 		public List<Transaction> readFromCSV(string fileLocation)
 		{
+			Core.Context.log.i("loading transactions...");
 
 			List<Transaction> transactions = new List<Transaction>();
 			int count = 0;
@@ -64,7 +75,8 @@ namespace App.Loner.Serializers
 							}
 							catch (Exception ex)
 							{
-								Console.WriteLine("error parsing values to network model: " + ex.Message);
+								Core.Context.log.e("error parsing values to transaction model: " + ex.Message);
+								writeFailedDataToCSV(line);
 							}
 
 						}
@@ -75,14 +87,17 @@ namespace App.Loner.Serializers
 
 				}
 
+				Core.Context.log.i("transactions loaded.");
+
 			}
 			catch (FileNotFoundException ex)
 			{
-				Console.WriteLine("file not found");
+				Core.Context.log.e("file not found...");
 			}
 
 			return transactions;
 
 		}
+
 	}
 }

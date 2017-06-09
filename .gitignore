@@ -2,3 +2,4 @@ obj/
 bin/
 src/Loner/Loner.userprefs
 src/output.csv
+src/failed_transactions.csv

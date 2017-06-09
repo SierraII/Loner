@@ -10,14 +10,22 @@ namespace App.Loner
 	{
 		public static void Main(string[] args)
 		{
-			TransactionImporter transactionImporter = new TransactionImporter();
-			CSVSerializer csvSerializer = new CSVSerializer();
 
+			TransactionImporter transactionImporter = new TransactionImporter();
 			List<Network> aggregatedNetworkList = transactionImporter.aggrigateTransactionsFromCSV("../../../../loans.csv");
 
-			csvSerializer.exportAggrigatedList(aggregatedNetworkList, "../../../../output.csv");
+			if (aggregatedNetworkList.Count > 0)
+			{
+				CSVSerializer csvSerializer = new CSVSerializer();
+				csvSerializer.exportAggrigatedList(aggregatedNetworkList, "../../../../output.csv");
+			}
+			else
+			{
+				Core.Context.log.i("no aggrigated transactions, file not being written.");
+			}
 
 			Console.ReadLine();
+
 		}
 	}
 }

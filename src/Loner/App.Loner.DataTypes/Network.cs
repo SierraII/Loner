@@ -22,10 +22,10 @@ namespace App.Loner.DataTypes
 			// check if the month and year already exists in that object
 			var existingLoan = this.loans.Find(e => e.DateTime.Month == date.Month && e.DateTime.Year == date.Year);
 
-			// create the loan and products
 			if (existingLoan == null)
 			{
-				Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
+				// create the loan and products
+				Core.Context.log.i(this.Name + " - " + productName + " doesn't exist in " + date.ToString("MMMM") + "... adding.");
 
 				Product product = new Product(productName, amount);
 
@@ -36,20 +36,20 @@ namespace App.Loner.DataTypes
 			}
 			else
 			{
-				// check for existing products in the loan
+				// check for existing products in the loan (within the scope of that month)
 				var existingProduct = existingLoan.products.Find(e => e.Name == productName);
 
 				if (existingProduct == null)
 				{
 					// create the product
-					Console.WriteLine(this.Name + ":: " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding");
+					Core.Context.log.i(this.Name + " - " + productName + " doesn't exist in month " + date.ToString("MMMM") + "... adding.");
 					Product product = new Product(productName, amount);
 					existingLoan.products.Add(product);
 				}
 				else
 				{
 					// ammend the amount
-					Console.WriteLine(this.Name + ":: " + productName + " exists in month " + date.ToString("MMMM") + ", incrementing product loan amount by " + amount);
+					Core.Context.log.i(this.Name + " - " + productName + " exists in month " + date.ToString("MMMM") + ", incrementing amount by " + amount + ".");
 					existingProduct.Amount += amount;
 				}
 

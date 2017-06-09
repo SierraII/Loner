@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.DataTypes", "App.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Serializers", "App.Loner.Serializers\App.Loner.Serializers.csproj", "{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Core", "App.Loner.Core\App.Loner.Core.csproj", "{E8F6F546-5673-4B8C-A4C2-936616AB4E2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -37,5 +39,9 @@ Global
 		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Debug|x86.Build.0 = Debug|Any CPU
 		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Release|x86.ActiveCfg = Release|Any CPU
 		{6167E5CC-F0F0-4CDC-82C0-FA008EFF1FD9}.Release|x86.Build.0 = Release|Any CPU
+		{E8F6F546-5673-4B8C-A4C2-936616AB4E2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E8F6F546-5673-4B8C-A4C2-936616AB4E2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{E8F6F546-5673-4B8C-A4C2-936616AB4E2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{E8F6F546-5673-4B8C-A4C2-936616AB4E2B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
