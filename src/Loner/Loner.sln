@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner", "App.Loner\App.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Utils", "App.Loner.Utils\App.Loner.Utils.csproj", "{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.Importers", "App.Loner.Importers\App.Loner.Importers.csproj", "{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Loner.DataTypes", "App.Loner.DataTypes\App.Loner.DataTypes.csproj", "{DE4B9B35-742F-44DB-ADEA-013A7494E768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +23,13 @@ Global
 		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Debug|x86.Build.0 = Debug|Any CPU
 		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Release|x86.ActiveCfg = Release|Any CPU
 		{69BDFC8C-F8D7-4DCD-BB4F-6BD870F849C8}.Release|x86.Build.0 = Release|Any CPU
+		{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}.Debug|x86.Build.0 = Debug|Any CPU
+		{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}.Release|x86.ActiveCfg = Release|Any CPU
+		{0D18F2B7-80FB-4F77-8C5E-9E930C07410E}.Release|x86.Build.0 = Release|Any CPU
+		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE4B9B35-742F-44DB-ADEA-013A7494E768}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
