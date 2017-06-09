@@ -1,8 +1,8 @@
-﻿using App.Loner.Importers;
+﻿using System;
+using App.Loner.DataTypes;
+using App.Loner.Importers;
 using App.Loner.Serializers;
 using System.Collections.Generic;
-using App.Loner.DataTypes;
-using System;
 
 namespace App.Loner
 {

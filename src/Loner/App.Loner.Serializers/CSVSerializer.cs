@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Text;
 using App.Loner.DataTypes;
+using System.IO;
+using System;
 
 namespace App.Loner.Serializers
 {
@@ -31,8 +30,7 @@ namespace App.Loner.Serializers
 										   "," + product.Name +
 										   "," + loan.DateTime.ToString("MMM-yyyy") +
 										   "," + product.Count +
-										   "," + product.Amount.ToString().Replace(",", ".")
-										  );
+										   "," + product.Amount.ToString().Replace(",", "."));
 
 						}
 					}
@@ -56,11 +54,12 @@ namespace App.Loner.Serializers
 
 		public List<Transaction> readFromCSV(string fileLocation)
 		{
+			
 			Core.Context.log.i("loading transactions...");
 
-			List<Transaction> transactions = new List<Transaction>();
-			int count = 0;
 			string line;
+			int count = 0;
+			List<Transaction> transactions = new List<Transaction>();
 
 			try
 			{

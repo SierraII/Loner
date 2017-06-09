@@ -4,15 +4,12 @@ using System.Text;
 
 namespace App.Loner.Utils
 {
-
 	public class Logcat
 	{
 
 		public StringBuilder Info { get; set; }
 		public StringBuilder Debug { get; set; }
 		public StringBuilder Error { get; set; }
-
-		private static object _writeLock = new object();
 
 		public Logcat()
 		{
@@ -64,12 +61,10 @@ namespace App.Loner.Utils
 
 		private void writeToFile(string filename, string message)
 		{
-			
 			using (StreamWriter file = new StreamWriter(@filename, true))
 			{
 				file.WriteLine(message);
 			}
-			
 		}
 
 		private string getTimestamp()

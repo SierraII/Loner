@@ -1,5 +1,4 @@
-﻿using System;
-using App.Loner.Utils;
+﻿using App.Loner.Utils;
 
 namespace App.Loner.Core
 {
