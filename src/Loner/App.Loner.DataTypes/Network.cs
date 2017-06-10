@@ -6,15 +6,15 @@ namespace App.Loner.DataTypes
 	public class Network
 	{
 
-		public List<Loan> loans { get; set; }
-		public long MSISDN { get; set; }
 		public string Name { get; set; }
+		public long MSISDN { get; set; }
+		public List<Loan> loans { get; set; }
 
 		public Network(long msisdn, string name)
 		{
-            this.loans = new List<Loan>();
-			this.MSISDN = msisdn;
 			this.Name = name;
+			this.MSISDN = msisdn;
+			this.loans = new List<Loan>();
 		}
 
 		public void addLoan(DateTime date, string productName, decimal amount)

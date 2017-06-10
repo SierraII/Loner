@@ -11,7 +11,7 @@
 		{
 			this.Count = 1;
 			this.Amount = amount;
-            this.Name = productName;
+			this.Name = productName;
 		}
 
 	}

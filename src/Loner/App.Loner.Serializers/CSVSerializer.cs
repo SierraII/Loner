@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using App.Loner.DataTypes;
+﻿using System;
 using System.IO;
-using System;
+using App.Loner.DataTypes;
+using System.Globalization;
+using System.Collections.Generic;
 
 namespace App.Loner.Serializers
 {
