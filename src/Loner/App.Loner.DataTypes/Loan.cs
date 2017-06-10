@@ -11,7 +11,7 @@ namespace App.Loner.DataTypes
 		public Loan(DateTime date)
 		{
 			this.DateTime = date;
-            this.products = new List<Product>();
+			this.products = new List<Product>();
 		}
 
 	}
