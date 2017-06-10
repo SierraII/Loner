@@ -26,7 +26,7 @@ namespace App.Loner.Utils
 
 			Info.AppendLine(message);
 
-            writeToFile("logs.log", message);
+			writeToFile("logs.log", message);
 
 			Console.WriteLine(message);
 
@@ -53,7 +53,7 @@ namespace App.Loner.Utils
 			Error.AppendLine(message);
 
 			writeToFile("logs.log", message);
-            writeToFile("error.log", message);
+			writeToFile("error.log", message);
 
 			Console.WriteLine(message);
 
