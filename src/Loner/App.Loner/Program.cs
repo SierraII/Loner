@@ -3,6 +3,7 @@ using App.Loner.DataTypes;
 using App.Loner.Importers;
 using App.Loner.Serializers;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace App.Loner
 {
@@ -25,6 +26,11 @@ namespace App.Loner
 			}
 
 			Console.ReadLine();
+
+			while (true)
+			{
+				Thread.Sleep(1000);
+			}
 
 		}
 	}
