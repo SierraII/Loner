@@ -14,6 +14,8 @@ Given a CSV from our accounting department calculate the aggregate loans by the 
 ## Language and Dependencies
 I used C# to write this application in as it is something that I am fairly familiar with especially with regards to turning this into a "micro-service" as later described. The IDE of choice was Xamarin and the default .NET framework it comes with was Mono. I did not commit the bin or exe files in this repository. You are able to build and run this application from Xamarin (or any other C# IDE) with the provided .sln file within the src folder.
 
+I have also added in a forever loop, I use this for my second repository (mentioned below) for deploying to Kubernetes.
+
 ## Scaling, Performance and Extendability
 Even though this was a small project, I wanted to create and architect a solution that would be extendable in future. There are multiple projects within this solution that are designed to contain specific classes and functions. Namely:
 - <b>App.Loner - </b> The main entry point of the application.
