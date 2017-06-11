@@ -69,7 +69,7 @@ namespace App.Loner.Utils
 
 		private string getTimestamp()
 		{
-			return DateTime.Now.ToString("dd/mm/yyyy hh:mm:ss ffff");
+			return DateTime.Now.ToString("dd/MMM/yyyy hh:mm:ss ffff");
 		}
 
 	}
