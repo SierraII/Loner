@@ -32,6 +32,6 @@ The performance of this application is something that could also do with a littl
 <b>Much more detailed logs can be found in the Loner/App.Loner/bin/Debug/ folder.</b>
 
 ## Notes
-Following on from this project, I have created a separate repository for running and creating this into a micro-service running on Kubernetes. I did not want to clutter this project up with unnecessary setups and technologies that were out of scope for this interview project and wanted to keep getting the end result up and running for the reviewer easily. I did, however want to go above and beyond the question and add more work into it than was required.  
+Following on from this project, I have created a separate repository for running and creating this into a micro-service running on Kubernetes. I did not want to clutter this project up with unnecessary setups and technologies that were out of scope for this interview project and wanted to keep getting the end result up and running for the reviewer easy. I did, however want to go above and beyond the question and add more work into it than was required.  
 
 Please follow on to <a href="https://github.com/SierraII/Loner-MicroService">my second repository</a> where I demonstrate deployment of this project and push the application onto Kubernetes.
