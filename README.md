@@ -31,4 +31,4 @@ The performance of this application is something that could also do with a littl
 
 Following on from this project, I have created a separate repository for running and creating this into a microservice running on Kubernetes.  
 I did not want to clutter this project up with unnessesary setups and technologies that were out of scope for this interview project. I did, however want to go above and beyond the question and add more work into it than was required.
-Please follow on to <a href="https://github.com/SierraII/Loner-MicroService">my second repository</a> where I domonstrait deployment of this project and push the application onto KUbernetes.
+Please follow on to <a href="https://github.com/SierraII/Loner-MicroService">my second repository</a> where I domonstrait deployment of this project and push the application onto Kubernetes.
